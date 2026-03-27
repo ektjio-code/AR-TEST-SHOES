@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR View</title>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #e8e8e8; overflow: hidden; }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background: #e8e8e8;
+      --poster-color: #e8e8e8;
+    }
+
+    model-viewer::part(default-ar-button) {
+      bottom: 24px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  </style>
+</head>
+<body>
+
+  <model-viewer
+    src="knoose5.glb"
+    ios-src="knoose5.usdz"
+    alt="3D Model"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    camera-controls
+    touch-action="pan-y"
+    environment-image="neutral"
+    shadow-intensity="1"
+    exposure="2"
+    auto-rotate
+    autoplay
+  ></model-viewer>
+
+</body>
+</html>
